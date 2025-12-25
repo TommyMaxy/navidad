@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Lorena 💜</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #b57edc, #e6c7f5);
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #4a235a;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 28px 22px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 22px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+      animation: fadeIn 1.8s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: #7d3c98;
+      margin-bottom: 22px;
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: appear 1s ease forwards;
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.8s; }
+    p:nth-of-type(2) { animation-delay: 2s; }
+    p:nth-of-type(3) { animation-delay: 3.5s; }
+    p:nth-of-type(4) { animation-delay: 5s; }
+    p:nth-of-type(5) { animation-delay: 6.5s; }
+
+    .firma {
+      margin-top: 20px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .sorpresa-container {
+      text-align: center;
+      margin-top: 28px;
+      opacity: 0;
+      animation: appear 1s ease forwards;
+      animation-delay: 8s;
+    }
+
+    .btn-sorpresa {
+      background: linear-gradient(135deg, #9b59b6, #d7bde2);
+      border: none;
+      color: white;
+      padding: 12px 22px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-sorpresa:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+    }
+
+    .cierre {
+      margin-top: 22px;
+      font-size: 1rem;
+      text-align: center;
+      color: #6c3483;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 9.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: float 7s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Para ti, Lorena 💜</h1>
+
+    <p>Lorena,</p>
+
+    <p>
+      Esta Navidad no puedo abrazarte,  
+      pero sí puedo decirte lo que a veces me guardo  
+      cuando te miro en silencio.
+    </p>
+
+    <p>
+      La distancia no cambia lo que siento,  
+      solo me recuerda lo importante que eres.  
+      Estás en mi calma, en mis pensamientos simples  
+      y en esas sonrisas que aparecen sin razón.
+    </p>
+
+    <p>
+      Tu forma de ser, tan tranquila y tan tuya,  
+      me enseñó que el amor no siempre hace ruido,  
+      a veces solo se queda… y eso basta.
+    </p>
+
+    <p>
+      Gracias por existir, por quedarte  
+      y por amar como amas.  
+      Feliz Navidad, amor.  
+      Te amo más de lo que estas palabras pueden decir.
+    </p>
+
+    <div class="firma">— Diego 🎄💜</div>
+
+    <!-- BOTÓN SORPRESA -->
+    <div class="sorpresa-container">
+      <button class="btn-sorpresa" onclick="abrirSorpresa()">
+        Hay algo más para ti 💜
+      </button>
+    </div>
+
+    <!-- CIERRE -->
+    <div class="cierre">
+      ¿Seguimos escribiendo nuestra historia…  
+      incluso en la distancia? ✨
+    </div>
+  </div>
+
+  <script>
+    function abrirSorpresa() {
+      window.open("https://vt.tiktok.com/ZSPThTh6D/", "_blank");
+    }
+
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = Math.random() > 0.5 ? "💜" : "✨";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (6 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => { heart.remove(); }, 8000);
+    }
+
+    setInterval(crearCorazon, 700);
+  </script>
+
+</body>
+</html>
